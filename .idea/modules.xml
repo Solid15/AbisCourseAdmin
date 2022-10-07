@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CoffeeCore/CoffeeCore.iml" filepath="$PROJECT_DIR$/CoffeeCore/CoffeeCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CourseAdmin/CourseAdmin.iml" filepath="$PROJECT_DIR$/CourseAdmin/CourseAdmin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExtraExercices/ExtraExercices.iml" filepath="$PROJECT_DIR$/ExtraExercices/ExtraExercices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOHello.iml" filepath="$PROJECT_DIR$/OOHello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Syntax/Syntax.iml" filepath="$PROJECT_DIR$/Syntax/Syntax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/hello.iml" filepath="$PROJECT_DIR$/hello/hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lan-exercise/lan-exercise.iml" filepath="$PROJECT_DIR$/lan-exercise/lan-exercise.iml" />
+    </modules>
+  </component>
+</project>
