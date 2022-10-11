@@ -14,12 +14,8 @@ public class Coffee implements Fillable {
 
     @Override
     public void drink(Person person, Fillable coffee) {
-        if (coffee != null) {
             System.out.println(person.getName() + " is drinking coffee.");
             destroyItself(coffee);
-        } else {
-            System.out.println("There is no coffee here!!!");
-        }
     }
 
 

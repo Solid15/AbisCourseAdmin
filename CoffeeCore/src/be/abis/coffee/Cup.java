@@ -8,7 +8,16 @@ public class Cup {
     }
 
     public Fillable getFillable() {
-        return fillable;
+        if (fillable != null) {
+            return fillable;
+        } else {
+            return new Fillable() {
+                @Override
+                public void drink(Person person, Fillable fillable) {
+                    System.out.println(person.getName() + ": There is nothing to drink here!!!");
+                }
+            };
+        }
     }
 
     public void setFillable(Fillable fillable) {
