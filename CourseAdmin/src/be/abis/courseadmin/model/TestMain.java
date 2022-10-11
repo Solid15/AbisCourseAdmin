@@ -90,20 +90,7 @@ public class TestMain {
         System.out.println(DateUtils.roundedClockFormatter(time1));
 
 
-        System.out.println();
-        FileCompanyRepository fileCompanyRepository = new FileCompanyRepository();
-        fileCompanyRepository.addCompany(abis);              // success !!!!!
-        fileCompanyRepository.addCompany(ibm);
 
-        try {
-            System.out.println(fileCompanyRepository.findCompany("aBiS").getCompanyName());
-            System.out.println(fileCompanyRepository.findCompany("ibm").getCompanyName());
-            System.out.println(fileCompanyRepository.findCompany("Smals").getCompanyName());
-            System.out.println(fileCompanyRepository.findCompany("Egov Select").getCompanyName());
-            System.out.println(fileCompanyRepository.findCompany(2));
-        } catch (CompanyNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
 
         System.out.println();
         System.out.println(CalculatorUtils.callCalculator((i, d) -> i + d, 5, 7));      // lambda
@@ -151,9 +138,20 @@ public class TestMain {
             p.printInfo();
         }
 
+        System.out.println();
+        FileCompanyRepository fileCompanyRepository = new FileCompanyRepository();
+        fileCompanyRepository.addCompany(abis);              // success !!!!!
+        fileCompanyRepository.addCompany(ibm);
 
-
-
+        try {
+            System.out.println(fileCompanyRepository.findCompany("aBiS").getCompanyName());
+            System.out.println(fileCompanyRepository.findCompany("ibm").getCompanyName());
+            System.out.println(fileCompanyRepository.findCompany("Smals").getCompanyName());
+            System.out.println(fileCompanyRepository.findCompany("Egov Select").getCompanyName());
+            System.out.println(fileCompanyRepository.findCompany(2));
+        } catch (CompanyNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
 
 
 

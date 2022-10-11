@@ -1,6 +1,6 @@
 package be.abis.coffee;
 
-public class MainMethod {
+public class CoffeeMainMethod {
                                                            // exception handling required
     public static void main(String... args) {
 
