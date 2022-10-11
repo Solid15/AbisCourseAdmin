@@ -151,8 +151,8 @@ public class TestMain {
             System.out.println(fileCompanyRepository.findCompany("aBiS").getCompanyName());
             System.out.println(fileCompanyRepository.findCompany("ibm").getCompanyName());
             System.out.println(fileCompanyRepository.findCompany("Smals").getCompanyName());
-            System.out.println(fileCompanyRepository.findCompany("Egov Select").getCompanyName());
-            System.out.println(fileCompanyRepository.findCompany(2));
+            System.out.println(fileCompanyRepository.findCompany("Egov Select"));     // toString() method called
+            System.out.println("Company nr.2: " + fileCompanyRepository.findCompany(2).getCompanyName());
         } catch (CompanyNotFoundException e) {
             System.out.println(e.getMessage());
         }

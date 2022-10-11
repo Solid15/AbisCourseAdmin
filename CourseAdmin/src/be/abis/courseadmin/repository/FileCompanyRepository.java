@@ -23,18 +23,10 @@ public class FileCompanyRepository implements  CompanyRepository {
 
     @Override
     public Company findCompany(int id) throws CompanyNotFoundException {
-        boolean b = true;
-        try (BufferedReader reader = new BufferedReader(new FileReader(pathWay))) {
-            while (b) {
-                if (findCompany(reader.readLine()).getCompanyNumber() == id) {
-                    b = false;
-                    System.out.println("Company ID found");
-                }
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
+        for (Company company : companies) {
+            if (id == company.getCompanyNumber()) return company;
         }
-        throw new CompanyNotFoundException(companyNotFound);
+        throw new CompanyNotFoundException("Company not found by ID");
     }
 
     @Override
@@ -49,7 +41,6 @@ public class FileCompanyRepository implements  CompanyRepository {
             } catch(IOException e){
                 System.out.println(e.getMessage());
             }
-        System.out.println("Company not found by name");
         throw new CompanyNotFoundException(companyNotFound);
     }
 
