@@ -4,6 +4,8 @@ import be.abis.courseadmin.model.Company;
 import be.abis.exception.CompanyNotFoundException;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileCompanyRepository implements  CompanyRepository {
 
@@ -13,7 +15,7 @@ public class FileCompanyRepository implements  CompanyRepository {
                                                                 // @Component above class will make singleton in Spring
     private final String pathWay =  "company.txt";
     private final String companyNotFound = "Company not found";
-   // private List<Company> companies;
+    private List<Company> companies = new ArrayList<>();
 
 
     public FileCompanyRepository() {
@@ -52,25 +54,21 @@ public class FileCompanyRepository implements  CompanyRepository {
     }
 
     @Override
-    public void addCompany(Company company) {
+    public void addCompany(Company newCompany) {
+        int numberOfCompanies = companies.size();
             try (PrintWriter writer = new PrintWriter(new PrintWriter(pathWay))) {
+                for (Company company : companies) {
+                    writer.write(company.getCompanyName() + "\n");
+                }
+                writer.append(newCompany.getCompanyName());                // .append and .write do similar things
+                companies.add(newCompany);
+         //       System.out.println("Number of companies: " + numberOfCompanies);
 
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
 
-        boolean b = false;
-        String compToAdd = company.getCompanyName();
-  /**      Iterator<Company> iteration = companies.iterator();   // how to set companies?
-        try (PrintWriter writer = new PrintWriter(new FileWriter(pathWay, true)))  {
-        while (iteration.hasNext()) {
-            iteration.next();                   // is this correct?
-            }
-        writer.write(company.getCompanyName());
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
- */   }
+    }
 
     @Override
     public void updateCompany(Company company) throws CompanyNotFoundException {   // find by ID
@@ -85,5 +83,9 @@ public class FileCompanyRepository implements  CompanyRepository {
 
     public static FileCompanyRepository getRepository() {
         return repository;
+    }
+
+    public List<Company> getCompanies() {
+        return companies;
     }
 }

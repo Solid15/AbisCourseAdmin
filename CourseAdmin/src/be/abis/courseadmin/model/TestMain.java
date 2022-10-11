@@ -19,6 +19,8 @@ public class TestMain {
         Company ttl = new Company("TTL");
         Company ibm = new Company("IBM");
         Company abis = new Company("ABIS");
+        Company smals = new Company("Smals");
+        Company egov = new Company("Egov Select");
         Person instructor = new Person("Bob", "Janssens");
         Course java = new Course("Java", 8, 154.83);
         System.out.println(java.calculateTotalPrice(18));
@@ -140,8 +142,10 @@ public class TestMain {
 
         System.out.println();
         FileCompanyRepository fileCompanyRepository = new FileCompanyRepository();
-        fileCompanyRepository.addCompany(abis);              // success !!!!!
+        fileCompanyRepository.addCompany(abis);
         fileCompanyRepository.addCompany(ibm);
+        fileCompanyRepository.addCompany(smals);
+        fileCompanyRepository.addCompany(egov);
 
         try {
             System.out.println(fileCompanyRepository.findCompany("aBiS").getCompanyName());
